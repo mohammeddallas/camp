@@ -1,0 +1,12 @@
+.marketing-area {
+  background: #323E48;
+}
+
+.no-float.marketing-area {
+  vertical-align: middle;
+}
+
+.marketing-picture {
+  width: 90%;
+  height: 90%;
+}

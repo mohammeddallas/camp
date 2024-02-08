@@ -1,0 +1,101 @@
+﻿(function (window, navigator, $, undefined) {
+  navigator.browserInformation = (function () {
+    var ua = navigator.userAgent,
+      temp,
+      M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+    if (/trident/i.test(M[1])) {
+      temp = /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return { name: 'IE', version: (temp[1] || '') };
+    }
+
+    if (M[1] === 'Chrome') {
+      temp = ua.match(/\b(OPR|Edge)\/(\d+)/);
+      if (temp != null) return { name: temp[1].replace('OPR', 'Opera'), version: temp[2] };
+    }
+
+    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+
+    if ((temp = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, temp[1]);
+
+    return { name: M[0], version: M[1] };
+  })();
+
+  $(function () {
+    var $body = $("body"),
+      $footerDrawer = $(".footer-drawer");
+
+    function openFooterDrawer(contentSection) {
+      if (window["ga"] !== undefined) {
+        ga('send', 'event', 'Drawer', 'open', contentSection);
+      }
+
+      $body.addClass("drawer-open pcty-overlay-show pcty-overlay-open");
+      $footerDrawer.removeClass("small medium pcty-drawer-small pcty-drawer-medium");
+      if (contentSection === ".privacy-policy-drawer") {
+        $footerDrawer.addClass("open medium pcty-open pcty-drawer-medium");
+      } else {
+        $footerDrawer.addClass("open small pcty-open pcty-drawer-small");
+      }
+
+      $footerDrawer.find(".drawer-content-option").hide();
+      $footerDrawer.find(contentSection).show();
+    }
+
+    function validate() {
+      var isValid = $("#CompanyId").val().length > 0 &&
+        $("#Username").val().length > 0 &&
+        $("#Password").val().length > 0;
+
+      return isValid;
+    }
+
+    function setErrorVisible(isVisible) {
+      $(".server-error-banner").hide();
+
+      if (isVisible) {
+        $(".client-error-banner").show();
+      } else {
+        $(".client-error-banner").hide();
+      }
+    }
+
+    $(".browser-version").text(navigator.browserInformation.name + " " + navigator.browserInformation.version);
+
+    if (navigator.browserInformation.name === "IE" || navigator.browserInformation.name === "MSIE") {
+      $("#drawer-browser-version").removeClass("information");
+      $("#drawer-browser-version").addClass("warning");
+    }
+
+    $(document).on("click", ".open-footer-drawer", function (e) {
+      e.preventDefault();
+      openFooterDrawer($(this).data("content-section"));
+    });
+
+    $(".drawer .overlay,.close-help").click(function () {
+      $(this).closest(".drawer, .pcty-drawer").removeClass("open pcty-open");
+      $body.removeClass("drawer-open pcty-overlay-show pcty-overlay-open");
+    });
+
+    $(".login-button").on("click",
+      function () {
+        if (validate()) {
+          setErrorVisible(false);
+          return true;
+        } else {
+          setErrorVisible(true);
+          return false;
+        }
+      });
+
+    $(".sso-login-button").on("click",
+      function () {
+        return $("#CompanyId").val().length > 0;
+      });
+
+    $(".default-form").on("submit",
+      function () {
+        $(".submit-button")[0].disabled = true;
+      });
+  });
+})(window, window.navigator, jQuery)

@@ -1,0 +1,437 @@
+body.citrus {
+  margin: 0;
+  background-color: #fff;
+}
+
+@media(max-width: 699px) {
+  .hidden-xs {
+    display:none!important
+  }
+}
+
+@media(min-width: 700px)and (max-width:859px) {
+  .hidden-sm {
+    display:none!important
+  }
+}
+
+@media(min-width: 860px)and (max-width:1023px) {
+  .hidden-md {
+    display:none!important
+  }
+}
+
+@media(min-width: 1024px) {
+  .hidden-lg {
+    display:none!important
+  }
+}
+
+@-ms-viewport {
+  width: auto !important;
+}
+
+input::-ms-clear, input::-ms-reveal {
+  display: none
+}
+
+.login-app .button.full-width.margin-bottom {
+  margin-bottom: 15px;
+}
+
+html,body,.container {
+    height:100%;
+}
+
+.container-table {
+    display:table;
+    width: 100%;
+}
+
+.table-row {
+    height: 100%;
+    display: table-row;
+}
+
+.row .no-float {
+  display: table-cell;
+  float: none;
+  vertical-align: top;
+}
+
+.padding-vertical {
+  padding-top: 1.071rem;
+  padding-bottom: 1.071rem;
+}
+
+.padding-bottom {
+  padding-bottom: 1.071rem;
+}
+
+.button + .button.margin-left-none {
+  margin-left: 0;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.image-responsive {
+  height: auto;
+  max-width: 100%;
+  width: 100% \9;
+  display: block;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-logo {
+  display: block;
+  height: 40px;
+}
+
+@media screen and (min-width: 860px) {
+  .login-logo {
+    height: 45px;
+  }
+}
+
+.default-form div.forgot-login {
+  margin-top: .5rem;
+  color: #ccc;
+}
+
+.default-form a.forgot-login-field {
+  position: static;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1c8dc8;
+}
+
+.default-form a.show-password,
+.default-form a.hide-password {
+  -ms-background-position-x: -1.45em;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1c8dc8;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  text-decoration: none;
+  top: 40px;
+  right: 40px;
+}
+
+.default-form a.show-password {
+  padding-left: 1.75em;
+  background-image: url('../images/eye.svg');
+}
+
+.default-form a.hide-password {
+  padding-left: 2.05em;
+  background-image: url('../images/eye-closed.svg');
+}
+
+@media only screen and (max-width: 699px) {
+  .default-form a.show-password,
+  .default-form a.hide-password {
+    top: 48px;
+  }
+}
+
+.help-drawer ul {
+  margin-top: 0;
+  line-height: 20px;
+}
+
+.login-app .margin-top {
+  margin-top: 1.071rem;
+}
+
+.login-app .margin-bottom {
+  margin-bottom: 1.071rem;
+}
+
+.login-app .margin-bottom-small {
+  margin-bottom: 5px;
+}
+
+.login-app .margin-vertical {
+  margin-top: 1.071rem;
+  margin-bottom: 1.071rem;
+}
+
+.login-app h2.line-height-short {
+  line-height: 1.1;
+}
+
+.move-left {
+  margin-left: -25px !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.pull-bottom {
+  margin-bottom: -25px !important;
+}
+
+.error-banner > ul {
+    margin-top: 5px;
+    margin-left: -20px;
+    margin-bottom: 5px;
+    list-style-type: none;
+}
+
+.success-banner {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.error-banner > ul > li {
+  margin-bottom: 5px;
+}
+
+.supported-browsers-drawer a {
+  text-decoration: none;
+}
+
+.supported-browsers-drawer a:hover {
+  text-decoration: underline;
+}
+
+.supported-browsers-drawer .browser-box {
+  border: 1px solid #C4C4C4;
+  margin-top: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.supported-browsers-drawer .browser-box:hover {
+  background: #EAEAEa;
+}
+
+@media (min-width: 768px) {
+  .supported-browsers-drawer .browser-box {
+    height: 160px;
+  }
+}
+
+@media (min-width: 992px) {
+  .supported-browsers-drawer .browser-box {
+    height: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .supported-browsers-drawer .browser-box {
+    height: 170px;
+  }
+}
+
+.browser-box h3 {
+  color: #1C8DC8;
+}
+
+.supported-browsers-drawer .browser-logo {
+  display: block;
+  margin: auto;
+  width: 72px;
+  height: 72px;
+}
+
+.supported-browsers-drawer .image-space {
+  margin-top: 30px;
+}
+
+@media(min-width: 860px) {
+  .supported-browsers-drawer .browser-frame {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .supported-browsers-drawer .row {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.field-level-error {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 1.0rem;
+    color: #C8102E;
+    font-size: 0.90rem;
+}
+
+input[type=radio].hide-field-level-error {
+    outline: 0 !important;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.citrus .banner-message.warning {
+  min-height: 28px;
+  line-height: 2.0em;
+}
+
+.pcty-splash {
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin: 64px auto;
+  padding: 16px;
+  max-width: 460px;
+  text-align: center;
+  width: 90%;
+}
+
+.pcty-splash.pcty-push-down {
+  margin-top: 128px;
+}
+
+.pcty-splash .pcty-pull-up {
+  margin: -64px 0 24px 0;
+}
+
+.pcty-splash .pcty-splash-message h2 {
+  margin: 12px 0 0 0;
+}
+
+.pcty-splash .pcty-splash-message p {
+  margin: 16px 0;
+}
+
+.pcty-splash img {
+  height: auto;
+  max-width: 100%;
+}
+
+.pcty-splash-image {
+  width: 150px;
+  height: 74px;
+}
+
+.gray-bubbles {
+  background-color: #DADADA !important;
+}
+
+.pcty-help-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6
+}
+
+@media(max-width:699px) {
+  .pcty-help-link {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.45
+  }
+
+  .pcty-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+
+.pcty-large-padding-left {
+  padding-left: 36px !important;
+}
+
+.pcty-large-padding-right {
+  padding-right: 36px !important;
+}
+
+.pcty-large-padding-horizontal {
+  padding-right: 36px !important;
+  padding-left: 36px !important;
+}
+
+.pcty-medium-padding-left {
+  padding-left: 12px !important;
+}
+
+.pcty-medium-padding-right {
+  padding-right: 12px !important;
+}
+
+@media only screen and (max-width: 699px) {
+  .pcty-button.pcty-size-responsive {
+    overflow: hidden;
+    white-space: normal;
+    line-height: 20px;
+    padding: 13px 24px;
+  }
+}
+
+.citrus .sal-margin-bottom-xlarge {
+  margin-bottom: 32px;
+}
+
+.citrus .sal-help-drawer-buttons .sal-margin-bottom-small,
+.citrus .sal-help-drawer-buttons .sal-margin-bottom-small+.sal-margin-bottom-small {
+  margin-bottom: 12px;
+  white-space: normal;
+}
+
+.citrus .sal-help-drawer-buttons .size-xlarge
+{
+  font-size: 16px;
+  line-height: 12px;
+  white-space: normal;
+}
+
+.citrus .sal-help-drawer-buttons .col-sm-10,
+.citrus .sal-help-drawer-buttons .col-sm-offset-1,
+.citrus .sal-help-drawer-buttons .col-xs-12 {
+  padding:0;
+}
+
+@media(max-width: 699px) {
+  .citrus .sal-help-drawer-buttons {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal;
+  }
+
+  .citrus .sal-help-drawer-buttons .size-xlarge {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .citrus .sal-help-drawer-buttons .sal-margin-bottom-small,
+  .citrus .sal-help-drawer-buttons .sal-margin-bottom-small + .sal-margin-bottom-small {
+    margin-bottom: 16px;
+  }
+
+  .sal-mobile-height-expand {
+     height: 100% !important;
+  }
+  .sal-mobile-drawer-footer {
+    position: absolute;
+    bottom: 24px;
+    width:100%;
+  }
+}

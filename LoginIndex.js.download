@@ -1,0 +1,42 @@
+﻿function smartBannerEventHandler(platform, action) {
+  var data = { platform: platform, action: action };
+  $.ajax({
+    type: "POST",
+    url: metricsEndpoint,
+    headers: { "RequestVerificationToken": metricsAntiforgeryToken },
+    contentType: "application/json; charset=utf-8",
+    data: JSON.stringify(data)
+  });
+}
+
+document.addEventListener('smartbanner.exit', () => { smartBannerEventHandler(smartbanner.platform, "close"); });
+
+document.addEventListener('smartbanner.clickout', () => { smartBannerEventHandler(smartbanner.platform, "view"); });
+
+function checkCookies() {
+  var cookies = ('cookie' in document && (document.cookie.length > 0 ||
+    (document.cookie = 'pctyCookieEnabled = pctyCookieEnabled').indexOf.call(document.cookie, 'pctyCookieEnabled') > -1));
+
+  if (cookies) {
+    document.cookie = 'pctyCookieEnabled=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
+  else {
+    document.getElementById('cookiesNotEnabled').classList.remove('hidden');
+  }
+}
+
+function checkIE() {
+  if (navigator.browserInformation.name === "IE" || navigator.browserInformation.name === "MSIE") {
+    $("#internetExplorer").removeClass("hidden");
+  }
+}
+
+function checkCapsLock() {
+  var inputPassword = document.getElementById("Password");
+  inputPassword.addEventListener('keyup', function (e) {
+    if (typeof (e.getModifierState) === 'function') {
+      var isCapsLockOn = e.getModifierState('CapsLock');
+      $('#password-caps-lock-tag').html(isCapsLockOn ? 'Caps Lock is on' : '\xa0');
+    }
+  });
+}
